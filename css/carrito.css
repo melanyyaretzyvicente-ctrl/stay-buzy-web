@@ -1,0 +1,49 @@
+/* Carrito flotante y panel lateral. Mismos tonos y fuentes que la página de producto. */
+:root { --vino: #7A1E1E; --vino-claro: #962626; --cb-linea: rgba(255,255,255,.14); }
+.cb-fab { position: fixed; right: 20px; bottom: 20px; z-index: 50; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: var(--vino); color: #F5EFE6; border: 1px solid rgba(245,239,230,.4); box-shadow: 0 8px 24px rgba(0,0,0,.55); cursor: pointer; transition: background .2s; }
+.cb-fab:hover { background: var(--vino-claro); }
+.cb-fab svg { width: 28px; height: 28px; }
+.cb-fab b { position: absolute; top: -5px; right: -5px; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 12px; background: #F5EFE6; color: #0D0D0D; font: 700 .78rem/24px Arial, sans-serif; text-align: center; }
+.cb-fab.vacio b { display: none; }
+.cb-fab.salta { animation: cbsalta .45s; }
+@keyframes cbsalta { 40% { transform: scale(1.2); } }
+.cb-vel { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.65); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.cb { position: fixed; top: 0; right: 0; bottom: 0; z-index: 61; width: min(430px, 100%); display: flex; flex-direction: column; background: #0D0D0D; color: #F5EFE6; border-left: 1px solid var(--cb-linea); transform: translateX(105%); transition: transform .3s; font-family: 'Alkalami', Georgia, serif; line-height: 1.5; }
+.cb-abierto .cb-vel { opacity: 1; pointer-events: auto; }
+.cb-abierto .cb { transform: none; }
+.cb button { font-family: inherit; cursor: pointer; color: inherit; }
+.cb__cab { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; border-bottom: 1px solid var(--cb-linea); }
+.cb__cab h2 { font: 400 1.7rem 'Abril Fatface', Georgia, serif; }
+.cb__cab button { background: none; border: 0; font-size: 1.2rem; padding: 6px 10px; }
+.cb__envio { padding: 14px 22px; font-size: .9rem; border-bottom: 1px solid var(--cb-linea); }
+.cb__barra { height: 5px; margin-top: 8px; background: rgba(255,255,255,.12); border-radius: 3px; overflow: hidden; }
+.cb__barra i { display: block; height: 100%; background: var(--vino-claro); transition: width .3s; }
+.cb__lista { flex: 1; overflow-y: auto; list-style: none; padding: 6px 22px; }
+.cb__fila { display: grid; grid-template-columns: 72px 1fr auto; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--cb-linea); }
+.cb__fila img { width: 72px; height: 72px; object-fit: cover; border: 1px solid var(--cb-linea); }
+.cb__nom { font: 400 1.1rem/1.15 'Abril Fatface', Georgia, serif; }
+.cb__sub { font-size: .85rem; color: #b9b3aa; }
+.cb__cant { display: flex; align-items: center; gap: 4px; margin-top: 8px; }
+.cb__cant button { width: 30px; height: 30px; background: none; border: 1px solid var(--cb-linea); border-radius: 50%; }
+.cb__cant button:hover { border-color: #F5EFE6; }
+.cb__cant span { min-width: 28px; text-align: center; }
+.cb button.cb__quitar { width: auto; height: auto; margin-left: 10px; border: 0; border-radius: 0; font-size: .8rem; color: #b9b3aa; text-decoration: underline; }
+.cb__imp { font-size: .95rem; }
+.cb__pie { padding: 18px 22px 22px; border-top: 1px solid var(--cb-linea); display: grid; gap: 10px; background: rgba(255,255,255,.04); }
+.cb__tot { display: flex; justify-content: space-between; font: 400 1.3rem 'Abril Fatface', Georgia, serif; }
+.cb__nota { font-size: .78rem; color: #b9b3aa; }
+.cb__vacio { flex: 1; display: grid; place-content: center; justify-items: center; gap: 18px; text-align: center; padding: 30px; }
+.cb .btn, .btn { display: block; text-align: center; text-decoration: none; padding: 16px 20px; font: 400 .85rem 'Alkalami', Georgia, serif; letter-spacing: .25em; text-transform: uppercase; border: 1px solid #F5EFE6; transition: .25s; }
+.cb .btn--lleno { background: #F5EFE6; color: #0D0D0D; }
+.cb .btn--lleno:hover { background: #fff; }
+.cb .btn--borde { background: none; }
+.cb .btn--borde:hover { background: #F5EFE6; color: #0D0D0D; }
+@media (prefers-reduced-motion: reduce) { .cb, .cb-vel, .cb-fab { transition: none; animation: none; } }
+
+.pe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 24px; }
+.pe > div { padding: 24px; background: var(--negro); color: var(--crema); border: 1px solid rgba(0,0,0,.2); }
+.pe h3 { font-size: 1.6rem; margin-bottom: 10px; }
+.pe p { font-size: .9rem; opacity: .85; }
+@media (max-width: 800px) { .pe { grid-template-columns: 1fr; } }
+
+.ct { display: flex; flex-wrap: wrap; gap: 16px; }

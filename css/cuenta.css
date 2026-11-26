@@ -1,0 +1,52 @@
+/* Burbuja de perfil, ventana de acceso y reseñas. Mismos tonos y fuentes de la tienda. */
+.barra, .cab { padding-right: calc(5% + 58px); }
+.cu-btn { position: fixed; top: 9px; right: 12px; z-index: 55; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: var(--vino, #7A1E1E); color: #F5EFE6; border: 1px solid rgba(245,239,230,.45); font: 400 1.25rem 'Abril Fatface', Georgia, serif; cursor: pointer; padding: 0; }
+.cu-btn:hover { background: #962626; }
+.cu-btn svg { width: 24px; height: 24px; } .cu-btn img { width: 100%; height: 100%; object-fit: cover; }
+.cu-menu { position: fixed; top: 60px; right: 12px; z-index: 56; width: 220px; padding: 8px; background: #0D0D0D; border: 1px solid rgba(255,255,255,.2); box-shadow: 0 10px 30px rgba(0,0,0,.6); font-family: 'Alkalami', Georgia, serif; color: #F5EFE6; }
+.cu-menu p { padding: 8px 12px; font-size: .9rem; color: #b9b3aa; }
+.cu-menu a, .cu-menu button { display: block; width: 100%; padding: 10px 12px; background: none; border: 0; text-align: left; text-decoration: none; color: #F5EFE6; font: inherit; font-size: .95rem; cursor: pointer; }
+.cu-menu a:hover, .cu-menu button:hover { background: rgba(255,255,255,.09); }
+.cu-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 16px; background: rgba(0,0,0,.7); }
+.cu-modal[hidden] { display: none; }
+.cu-caja { position: relative; width: min(420px, 100%); padding: 28px; background: #0D0D0D; color: #F5EFE6; border: 1px solid rgba(255,255,255,.2); font-family: 'Alkalami', Georgia, serif; }
+.cu-x { position: absolute; top: 10px; right: 12px; background: none; border: 0; color: inherit; font-size: 1.1rem; cursor: pointer; }
+.cu-tabs { display: flex; gap: 6px; margin-bottom: 18px; }
+.cu-tabs button { flex: 1; padding: 10px; background: none; border: 0; border-bottom: 3px solid rgba(255,255,255,.14); color: #b9b3aa; font: inherit; cursor: pointer; }
+.cu-tabs button.on { color: #F5EFE6; border-color: #7A1E1E; }
+.cu-caja form { display: grid; gap: 12px; }
+.cu-caja label { display: grid; gap: 5px; font-size: .85rem; color: #b9b3aa; }
+.cu-caja input { padding: 12px; background: rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.2); color: #F5EFE6; font: 1rem 'Alkalami', Georgia, serif; border-radius: 0; }
+.cu-caja input:focus-visible { outline: 2px solid #F5EFE6; }
+.cu-err { min-height: 1.4em; color: #f0908b; font-size: .88rem; }
+.cu-ok { padding: 15px; background: #7A1E1E; border: 1px solid #7A1E1E; color: #F5EFE6; font: .85rem 'Alkalami', Georgia, serif; letter-spacing: .25em; text-transform: uppercase; cursor: pointer; }
+.cu-ok:hover { background: #962626; }
+/* Reseñas */
+.resenas { border-top: 1px solid var(--linea); }
+.resenas h2 { font: 400 2rem var(--f-titulos); margin-bottom: 20px; }
+.res__res { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; padding: 22px; border: 1px solid var(--linea); background: var(--panel); }
+.res__nota { font: 400 4rem/1 var(--f-titulos); }
+.est { letter-spacing: .1em; color: var(--crema); } .est i { font-style: normal; opacity: .25; } .est b { font-weight: 400; }
+.res__res p { font-size: .9rem; color: var(--gris-claro); } .res__res .est { font-size: 1.4rem; }
+.res__lista { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.res { padding: 20px; border: 1px solid var(--linea); background: var(--panel); }
+.res__c { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; font-size: .85rem; color: var(--gris-claro); }
+.res__c b { font: 400 1.1rem var(--f-titulos); color: var(--crema); display: block; }
+.res p { font-size: .95rem; } .res small { display: block; margin-top: 10px; color: var(--gris-claro); font-size: .75rem; }
+@media (max-width: 760px) { .res__lista { grid-template-columns: 1fr; } .res__res { flex-wrap: wrap; } }
+
+/* Que solo se vea un formulario a la vez */
+.cu-caja form[hidden] { display: none; }
+/* La ventana tiene su propio scroll y no mueve la página de atrás */
+.cu-modal { overflow-y: auto; overscroll-behavior: contain; }
+.cu-caja { max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain; }
+body.cu-bloqueo { overflow: hidden; }
+/* Ojito de la contraseña */
+.cu-pass { position: relative; display: block; }
+.cu-pass input { width: 100%; padding-right: 48px; }
+.cu-ojo { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; display: grid; place-items: center; background: none; border: 0; color: #b9b3aa; cursor: pointer; }
+.cu-ojo:hover { color: #F5EFE6; }
+.cu-ojo svg { width: 22px; height: 22px; }
+.cu-ojo .tacha { display: none; } .cu-ojo.on .tacha { display: block; }
+.cu-cambio { text-align: center; font-size: .9rem; color: #b9b3aa; }
+.cu-cambio button { background: none; border: 0; padding: 0; color: #F5EFE6; font: inherit; text-decoration: underline; cursor: pointer; }

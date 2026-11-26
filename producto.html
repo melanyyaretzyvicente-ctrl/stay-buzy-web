@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuentes: Abril Fatface (títulos), Alkalami (textos), Fasthand (frases). Road Rage se carga desde assets/fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alkalami&family=Fasthand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tienda.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/cuenta.css">
+  <title>Producto | Stay Buzy</title>
+</head>
+<body>
+  <header class="cab">
+    <a href="index.html"><img class="cab__logo" src="assets/logo.png" alt="Stay Buzy"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#catalogo" class="activo">Catálogo</a></li>
+        <li><a href="index.html#pago">Pago y entrega</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <p class="migas"><a href="index.html#catalogo">← Volver al catálogo</a></p>
+
+  <!-- Aquí js/producto.js dibuja la galería, el precio, la descripción y las tallas según ?id=... -->
+  <main class="producto" id="producto"></main>
+
+  <section class="resenas" id="resenas" aria-label="Reseñas"></section>
+
+  <section class="relacionados">
+    <div class="contenido">
+      <h2>También te puede gustar</h2>
+      <div class="rejilla" id="relacionados"></div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <p class="lema">No hacemos moda. Hacemos cultura.</p>
+    <p>Stay Buzy · Hecho en México · Imágenes ilustrativas</p>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/producto.js"></script>
+  <script src="js/resenas.js"></script>
+</body>
+</html>

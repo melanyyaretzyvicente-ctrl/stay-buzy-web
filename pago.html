@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago y entrega | Stay Buzy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alkalami&family=Fasthand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tienda.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/cuenta.css">
+  <link rel="stylesheet" href="css/pago.css">
+</head>
+<body data-sin-carrito>
+  <header class="cab">
+    <a href="index.html"><img class="cab__logo" src="assets/logo.png" alt="Stay Buzy"></a>
+    <p class="seguro">🔒 Compra segura</p>
+  </header>
+
+  <div class="pg" id="pg">
+    <ol class="pasos" id="pasos" aria-label="Avance de tu compra">
+      <li data-p="1">Entrega</li><li data-p="2">Pago</li><li data-p="3">Listo</li>
+    </ol>
+    <p class="demo" id="demo" hidden>Modo de prueba: no se hace ningún cobro real.</p>
+
+    <div class="cols">
+      <main>
+        <!-- PASO 1: contacto, dirección y envío -->
+        <form id="f1" class="paso" novalidate>
+          <h1>Datos de entrega</h1>
+          <fieldset class="grid">
+            <legend>Contacto</legend>
+            <label class="c2">Correo electrónico<input name="email" type="email" autocomplete="email" required></label>
+            <label class="c2">Celular (10 dígitos)<input name="tel" type="tel" inputmode="numeric" maxlength="12" autocomplete="tel-national" required></label>
+          </fieldset>
+          <fieldset class="grid">
+            <legend>Dirección</legend>
+            <label>Nombre<input name="nombre" autocomplete="given-name" required></label>
+            <label>Apellidos<input name="apellidos" autocomplete="family-name" required></label>
+            <label class="c2">Calle y número<input name="calle" autocomplete="address-line1" required></label>
+            <label>Colonia<input name="colonia" autocomplete="address-line2" required></label>
+            <label>Código postal<input name="cp" inputmode="numeric" maxlength="5" autocomplete="postal-code" required></label>
+            <label>Ciudad o municipio<input name="ciudad" autocomplete="address-level2" required></label>
+            <label>Estado<select name="estado" autocomplete="address-level1" required><option value="">Elige un estado</option></select></label>
+            <label class="c2">Referencias (opcional)<input name="ref" placeholder="Entre qué calles, color de la casa…"></label>
+          </fieldset>
+          <fieldset>
+            <legend>Método de envío</legend>
+            <div class="opts" id="envios"></div>
+          </fieldset>
+          <p class="err" id="e1" role="alert"></p>
+          <button class="btn btn--lleno" type="submit">Continuar al pago</button>
+        </form>
+
+        <!-- PASO 2: forma de pago -->
+        <form id="f2" class="paso" novalidate hidden>
+          <h1>Forma de pago</h1>
+          <p class="entrega-res" id="entregaRes"></p>
+          <div id="metodos"></div>
+          <p class="err" id="e2" role="alert"></p>
+          <button class="btn btn--lleno" type="submit" id="pagar">Confirmar pedido</button>
+          <button class="btn btn--borde" type="button" id="volver">Volver a entrega</button>
+        </form>
+
+        <!-- PASO 3: confirmación -->
+        <section id="f3" class="paso" hidden></section>
+      </main>
+
+      <aside class="resumen" id="resumen-caja">
+        <button class="resumen__t" id="resT" aria-expanded="false">Resumen del pedido <span id="resTot"></span></button>
+        <div class="resumen__c" id="resumen"></div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="pie">
+    <p class="lema">No hacemos moda. Hacemos cultura.</p>
+    <p>Stay Buzy · Hecho en México · Precios con IVA</p>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/pago.js"></script>
+</body>
+</html>

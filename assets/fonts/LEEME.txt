@@ -1,0 +1,4 @@
+Road Rage (la letra de la marca) no está en Google Fonts.
+1) Descárgala (por ejemplo en dafont.com, busca "Road Rage") y revisa que su licencia permita tu uso.
+2) Guarda el archivo aquí con este nombre exacto:  RoadRage.ttf   (o RoadRage.otf)
+3) Recarga la página. Si el archivo no está, se usa Permanent Marker como respaldo.

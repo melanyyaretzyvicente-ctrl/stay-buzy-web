@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay Buzy | Ropa de tu artista favorito</title>
+  <!-- Fuentes de la marca: Bebas Neue (títulos) y Montserrat (textos) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&family=Abril+Fatface&family=Alkalami&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/cuenta.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO: logo y menú. Cada enlace lleva a una sección por su id -->
+  <header class="barra">
+    <a href="#inicio"><img class="barra__logo" src="assets/logo.png" alt="Stay Buzy"></a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#pago">Pago y entrega</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA: texto a la izquierda, foto del modelo de fondo (assets/hero.jpg) -->
+    <section id="inicio" class="portada">
+      <div class="portada__contenido">
+        <img class="portada__logo" src="assets/logo.png" alt="Stay Buzy">
+        <p class="portada__lema">Clothes for<br>creative minds</p>
+        <p class="portada__eslogan">No hacemos moda. Hacemos cultura.</p>
+        <a class="boton" href="#catalogo">Shop now</a>
+      </div>
+    </section>
+
+    <!-- LOOKS: carrusel solo de imágenes (frente de cada look) con el logo encima. Lo mueve js/slider.js -->
+    <section id="looks" class="looks" aria-label="Looks de Stay Buzy">
+      <div class="slider" id="slider">
+      <div class="slide"><img class="slide__foto" src="assets/looks/abz-32.jpg" alt="Look Stay Buzy" ></div>
+      <div class="slide"><img class="slide__foto" src="assets/looks/dei-v.jpg" alt="Look Stay Buzy"></div>
+      <div class="slide"><img class="slide__foto" src="assets/looks/atomic.jpg" alt="Look Stay Buzy"></div>
+      <div class="slide"><img class="slide__foto" src="assets/looks/street-mob.jpg" alt="Look Stay Buzy"></div>
+      <div class="slide"><img class="slide__foto" src="assets/looks/la-odisea.jpg" alt="Look Stay Buzy"></div>
+        <img class="slider__logo" src="assets/logo.png" alt="Stay Buzy">
+      </div>
+    </section>
+
+    <!-- CATÁLOGO: los 16 productos, cuadrados, con foto de frente, nombre y precio. Los dibuja js/inicio.js -->
+    <section id="catalogo" class="seccion seccion--oscura catalogo">
+      <h2>Catálogo</h2>
+      <p class="catalogo__sub">16 diseños, una sola cultura. Toca uno para ver su descripción y tallas.</p>
+      <div class="rejilla" id="rejilla"></div>
+      <p class="catalogo__nota">Imágenes ilustrativas generadas con IA. Precios en pesos mexicanos.</p>
+    </section>
+
+    <section id="pago" class="seccion">
+      <h2>Pago y entrega</h2>
+      <div class="pe">
+        <div><h3>Paga como quieras</h3><p>Tarjeta de crédito o débito (hasta 12 meses sin intereses), OXXO y otras tiendas, transferencia SPEI, PayPal, Mercado Pago, Apple Pay, Google Pay, Kueski Pay, Aplazo y pago contra entrega.</p></div>
+        <div><h3>Envíos a todo México</h3><p>Estándar de 3 a 6 días hábiles, exprés de 1 a 3, o recoge en punto de entrega. Envío estándar gratis desde $999.</p></div>
+        <div><h3>Compra segura</h3><p>Tus datos de tarjeta nunca se guardan en esta tienda. Los precios ya incluyen IVA.</p></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion seccion--oscura">
+      <h2>Contacto</h2>
+      <p class="catalogo__sub">Únete al grupo de nuestro equipo en WhatsApp para dudas, pedidos y lanzamientos, y síguenos en Instagram.</p>
+      <div class="ct">
+        <a class="boton" id="ctWa" href="#" target="_blank" rel="noopener">Grupo de WhatsApp</a>
+        <a class="boton" id="ctIg" href="#" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <p>Stay Buzy · Hecho en México · Imágenes ilustrativas</p>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/inicio.js"></script>
+  <script src="js/slider.js"></script>
+  <script>document.getElementById("ctWa").href = TIENDA.whatsappGrupo; document.getElementById("ctIg").href = TIENDA.instagram;</script>
+</body>
+</html>
