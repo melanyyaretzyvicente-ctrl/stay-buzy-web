@@ -10,7 +10,7 @@ const TIENDA = {
     { id: 'rec', nombre: 'Recoger en punto de entrega', dias: [1, 2], precio: 0 }
   ],
   cargoContraEntrega: 0,
-  whatsappGrupo: 'Sigue el canal de Apoya Nuestro Proyecto 🙌🏼💗 en WhatsApp: https://whatsapp.com/channel/0029VbEDTITF1YlW6qBbLP1k',
+  whatsappGrupo: 'https://whatsapp.com/channel/0029VbEDTITF1YlW6qBbLP1k',
   instagram: 'https://www.instagram.com/stay_.buzy?bqrl=ZXJnYjdxdmVkM3R6',
   clabe: '000000000000000000'         // tu CLABE real para SPEI
 };
